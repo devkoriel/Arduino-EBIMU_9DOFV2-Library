@@ -1,0 +1,13 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+EBIMU	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+initialize	KEYWORD2
+getEulerAngles	KEYWORD2
+getQuaternion	KEYWORD2
+getGyro		KEYWORD2
