@@ -38,30 +38,24 @@ void seperator(char *SBuf, float *data, int size)
 
 EBIMU::EBIMU()
 {
-	_pin = EBIMU_DEFAULT_SERIAL_PIN;
-	_baudrate = EBIMU_DEFAULT_BAUDRATE;
 }
 
-void EBIMU::initialize()
+void EBIMU::initialize(int baudrate)
 {
-	switch (_pin)
-	{
-	case 1:
-		Serial1.begin(_baudrate);
-		break;
+#if EBIMU_SERIAL_PIN == 1
+	Serial1.begin(baudrate);
 
-	case 2:
-		Serial2.begin(_baudrate);
-		break;
+#elif EBIMU_SERIAL_PIN == 2
+	Serial2.begin(baudrate);
 
-	case 3:
-		Serial3.begin(_baudrate);
-		break;
-	}
+#elif EBIMU_SERIAL_PIN == 3
+	Serial3.begin(baudrate);
+#endif
 }
 
 uint8_t EBIMU::getEulerAngles(float *data)
 {
+#if EBIMU_SERIAL_PIN == 1
 	if (Serial1.available()){
 		buf[i] = Serial1.read();
 		i++;
@@ -75,10 +69,42 @@ uint8_t EBIMU::getEulerAngles(float *data)
 		}
 	}
 	return -1;
+
+#elif EBIMU_SERIAL_PIN == 2
+	if (Serial2.available()){
+		buf[i] = Serial2.read();
+		i++;
+
+		if (buf[i - 1] == EOL_LF) buf[i - 1] = ',';
+
+		if (buf[i - 1] == SOL){
+			seperator(buf, data, SIZE_OF_EULER_ANGLES);
+			i = 0;
+			return 1;
+		}
+	}
+	return -1;
+
+#elif EBIMU_SERIAL_PIN == 3
+	if (Serial3.available()){
+		buf[i] = Serial3.read();
+		i++;
+
+		if (buf[i - 1] == EOL_LF) buf[i - 1] = ',';
+
+		if (buf[i - 1] == SOL){
+			seperator(buf, data, SIZE_OF_EULER_ANGLES);
+			i = 0;
+			return 1;
+		}
+	}
+	return -1;
+#endif
 }
 
 uint8_t EBIMU::getQuaternion(float *data)
 {
+#if EBIMU_SERIAL_PIN == 1
 	if (Serial1.available()){
 		buf[i] = Serial1.read();
 		i++;
@@ -92,10 +118,42 @@ uint8_t EBIMU::getQuaternion(float *data)
 		}
 	}
 	return -1;
+
+#elif EBIMU_SERIAL_PIN == 2
+	if (Serial2.available()){
+		buf[i] = Serial2.read();
+		i++;
+
+		if (buf[i - 1] == EOL_LF) buf[i - 1] = ',';
+
+		if (buf[i - 1] == SOL){
+			seperator(buf, data, SIZE_OF_QUATERNION);
+			i = 0;
+			return 1;
+		}
+	}
+	return -1;
+
+#elif EBIMU_SERIAL_PIN == 3
+	if (Serial3.available()){
+		buf[i] = Serial3.read();
+		i++;
+
+		if (buf[i - 1] == EOL_LF) buf[i - 1] = ',';
+
+		if (buf[i - 1] == SOL){
+			seperator(buf, data, SIZE_OF_QUATERNION);
+			i = 0;
+			return 1;
+		}
+	}
+	return -1;
+#endif
 }
 
 uint8_t EBIMU::getGyro(float *data)
 {
+#if EBIMU_SERIAL_PIN == 1
 	if (Serial1.available()){
 		buf[i] = Serial1.read();
 		i++;
@@ -109,4 +167,35 @@ uint8_t EBIMU::getGyro(float *data)
 		}
 	}
 	return -1;
+
+#elif EBIMU_SERIAL_PIN == 2
+	if (Serial2.available()){
+		buf[i] = Serial2.read();
+		i++;
+
+		if (buf[i - 1] == EOL_LF) buf[i - 1] = ',';
+
+		if (buf[i - 1] == SOL){
+			seperator(buf, data, SIZE_OF_GYRO);
+			i = 0;
+			return 1;
+		}
+	}
+	return -1;
+
+#elif EBIMU_SERIAL_PIN == 3
+	if (Serial3.available()){
+		buf[i] = Serial3.read();
+		i++;
+
+		if (buf[i - 1] == EOL_LF) buf[i - 1] = ',';
+
+		if (buf[i - 1] == SOL){
+			seperator(buf, data, SIZE_OF_GYRO);
+			i = 0;
+			return 1;
+		}
+	}
+	return -1;
+#endif
 }

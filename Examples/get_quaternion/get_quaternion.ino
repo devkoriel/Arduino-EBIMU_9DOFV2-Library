@@ -8,7 +8,7 @@ void setup() {
   Serial.begin(57600);
   Serial.flush();
 
-  ahrs.initialize();
+  ahrs.initialize(115200);
 }
 
 void loop() {
