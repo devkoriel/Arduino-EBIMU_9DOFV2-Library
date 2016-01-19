@@ -1,7 +1,8 @@
 # Arduino-EBIMU_9DOFV2-Library
 Arduino Library for E2BOX EBIMU-9DOFV2 AHRS Module(http://www.e2box.co.kr/124)
+
 Features		|	Description
-------------------------|------------------------------------------------------
+------------ | -------------
 getEulerAngles()	|	Get Roll, Pitch, Yaw
 getQuaternion()		|	Get Quaternion
 getGyro()		|	Get Roll, Pitch, Yaw Gyros
