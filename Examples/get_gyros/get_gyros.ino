@@ -20,8 +20,8 @@ void loop() {
 
   Serial.print("Roll Gyro : ");
   Serial.print(gyro[0]);
-  Serial.print(" Pitch Gyro : ");
+  Serial.print("\tPitch Gyro : ");
   Serial.print(gyro[1]);
-  Serial.print(" Yaw Gyro : ");
+  Serial.print("\tYaw Gyro : ");
   Serial.println(gyro[2]);
 }

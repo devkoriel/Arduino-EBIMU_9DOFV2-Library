@@ -17,11 +17,11 @@ void loop() {
      * Waiting for data ready
      */
   }
-
+  
   Serial.print("Roll : ");
   Serial.print(angle[0]);
-  Serial.print(" Pitch : ");
+  Serial.print("\tPitch : ");
   Serial.print(angle[1]);
-  Serial.print(" Yaw : ");
+  Serial.print("\tYaw : ");
   Serial.println(angle[2]);
 }

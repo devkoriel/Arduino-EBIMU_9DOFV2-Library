@@ -21,15 +21,15 @@ void loop() {
 
   Serial.print("Roll : ");
   Serial.print(angle[0]);
-  Serial.print(" Pitch : ");
+  Serial.print("\tPitch : ");
   Serial.print(angle[1]);
-  Serial.print(" Yaw : ");
+  Serial.print("\tYaw : ");
   Serial.print(angle[2]);
 
-  Serial.print(" Roll Gyro : ");
+  Serial.print("\tRoll Gyro : ");
   Serial.print(gyro[0]);
-  Serial.print(" Pitch Gyro : ");
+  Serial.print("\tPitch Gyro : ");
   Serial.print(gyro[1]);
-  Serial.print(" Yaw Gyro : ");
+  Serial.print("\tYaw Gyro : ");
   Serial.println(gyro[2]);
 }
