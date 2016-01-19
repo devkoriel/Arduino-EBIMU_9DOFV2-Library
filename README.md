@@ -21,6 +21,7 @@ public:
 	uint8_t getEulerAngles(float *data); //default setting
 	uint8_t getQuaternion(float *data);
 	uint8_t getGyro(float *data);
+	uint8_t getEulerAnglesGyro(float *data, float *data2);
 
 private:
 };
