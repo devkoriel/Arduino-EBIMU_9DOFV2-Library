@@ -1,5 +1,5 @@
 # Arduino-EBIMU_9DOFV2-Library
-Arduino Library for E2BOX EBIMU-9DOFV2 AHRS Module
+Arduino Library for E2BOX EBIMU-9DOFV2 AHRS Module(http://www.e2box.co.kr/124)
 * getEulerAngles()
 * getQuaternion()
 * getGyro()
