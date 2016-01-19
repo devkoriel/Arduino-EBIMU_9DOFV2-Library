@@ -5,7 +5,7 @@ Arduino Library for E2BOX EBIMU-9DOFV2 AHRS Module
 * getGyro()
 
 # Warnings
-You shoud change serial pin configuration, which is at top of EBIMU.h header, to fit to your serial configuration.
+You shoud change serial pin configuration, which is at the top of EBIMU.h header, to fit to your serial configuration.
 
 # License
 This library is licensed under the MIT license (see the included license file for more information).
