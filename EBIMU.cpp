@@ -227,6 +227,7 @@ uint8_t EBIMU::getGyro(float *data)
 
 uint8_t EBIMU::getEulerAnglesGyro(float *data, float *data2)
 {
+#if EBIMU_SERIAL_PIN == 1
 	if (Serial1.available()){
 		buf[i] = Serial1.read();
 		i++;
@@ -242,4 +243,39 @@ uint8_t EBIMU::getEulerAnglesGyro(float *data, float *data2)
 		}
 	}
 	return -1;
+
+#elif EBIMU_SERIAL_PIN == 2
+	if (Serial2.available()){
+		buf[i] = Serial2.read();
+		i++;
+
+		if (buf[i - 1] == EOL_LF) buf[i - 1] = ',';
+
+		if (buf[i - 1] == SOL){
+			seperator(buf, data, SIZE_OF_EULER_ANGLES);
+			i = 0;
+
+			gyroCalc(data, data2);
+			return 1;
+		}
+	}
+	return -1;
+
+#elif EBIMU_SERIAL_PIN == 3
+	if (Serial3.available()){
+		buf[i] = Serial3.read();
+		i++;
+
+		if (buf[i - 1] == EOL_LF) buf[i - 1] = ',';
+
+		if (buf[i - 1] == SOL){
+			seperator(buf, data, SIZE_OF_EULER_ANGLES);
+			i = 0;
+
+			gyroCalc(data, data2);
+			return 1;
+		}
+	}
+	return -1;
+#endif
 }
