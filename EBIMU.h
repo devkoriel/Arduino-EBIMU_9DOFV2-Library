@@ -1,3 +1,6 @@
+#ifndef _EBIMU_H_
+#define _EBIMU_H_
+
 #include "Arduino.h"
 
 #define EBIMU_SERIAL_PIN	1
@@ -15,3 +18,5 @@ public:
 
 private:
 };
+
+#endif /* _EBIMU_H_ */
