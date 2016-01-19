@@ -19,12 +19,12 @@ void loop() {
      */
   }
 
-  Serial.print("Roll : ");
-  Serial.print(angle[0]);
-  Serial.print("\tPitch : ");
-  Serial.print(angle[1]);
-  Serial.print("\tYaw : ");
-  Serial.print(angle[2]);
+  //Serial.print("Roll : ");
+  //Serial.print(angle[0]);
+  //Serial.print("\tPitch : ");
+  //Serial.print(angle[1]);
+  //Serial.print("\tYaw : ");
+  //Serial.print(angle[2]);
 
   Serial.print("\tRoll Gyro : ");
   Serial.print(gyro[0]);
