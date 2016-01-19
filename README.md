@@ -3,6 +3,7 @@ Arduino Library for E2BOX EBIMU-9DOFV2 AHRS Module
 * getEulerAngles()
 * getQuaternion()
 * getGyro()
+* getEulerAnglesGyro()
 
 # How to Use
 You shoud change serial pin configuration, which is at the top of *EBIMU.h* header, to fit to your serial configuration.
