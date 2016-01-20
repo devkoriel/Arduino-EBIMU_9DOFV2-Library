@@ -1,12 +1,12 @@
 # Arduino-EBIMU_9DOFV2-Library
 Arduino Library for E2BOX EBIMU-9DOFV2 AHRS Module(http://www.e2box.co.kr/124)
 
-Mode|Features		|	Description
+	Mode	|	Features	|	Description
 ------------ | ------------ | -------------
-ASCII| getEulerAngles()	|	Get Roll, Pitch, Yaw
-|getQuaternion()		|	Get Quaternion
-|getGyro()		|	Get Roll, Pitch, Yaw Gyros
-|getEulerAnglesGyro()	|	Get Euler Angles and Gyros simultaneously 
+ASCII| getEulerAngles()		|	Get Roll, Pitch, Yaw
+ASCII| getQuaternion()		|	Get Quaternion
+ASCII| getGyro()		|	Get Roll, Pitch, Yaw Gyros
+ASCII| getEulerAnglesGyro()	|	Get Euler Angles and Gyros simultaneously 
 
 # How to Use
 You shoud change serial pin configuration, which is at the top of *EBIMU.h* header, to fit to your serial configuration.
